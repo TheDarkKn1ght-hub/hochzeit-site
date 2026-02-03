@@ -560,3 +560,88 @@ input[name="response"][value="Zusage"]:checked ~ #essen-wrapper {
     margin-top: 0.2rem;
   }
 }
+/* ==============================
+   MOBILE GLOBAL FIX
+============================== */
+@media (max-width: 600px) {
+
+  body {
+    padding: 0;
+  }
+
+  header,
+  main,
+  footer {
+    padding: 1.5rem 1rem;
+    max-width: 100%;
+  }
+
+  section {
+    margin-bottom: 3rem;
+  }
+}
+/* ==============================
+   MOBILE TIMELINE CLEAN
+============================== */
+@media (max-width: 600px) {
+
+  .timeline::before {
+    display: none; /* Linie komplett aus */
+  }
+
+  .event {
+    position: relative;
+    display: block;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+
+  .event .icon {
+    position: static;
+    transform: none;
+    margin-bottom: 0.6rem;
+    width: 42px;
+    height: 42px;
+    font-size: 1.3rem;
+  }
+
+  .event .content {
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0;
+  }
+
+  .event.left .content,
+  .event.right .content {
+    margin: 0;
+  }
+}
+@media (max-width: 600px) {
+
+  #countdown {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .time-box {
+    min-width: 100px;
+  }
+
+  iframe {
+    height: 220px;
+  }
+}
+@media (max-width: 600px) {
+
+  #attendance form,
+  #rsvp form {
+    max-width: 100%;
+  }
+
+  button,
+  .witness-mail {
+    width: 100%;
+    text-align: center;
+  }
+}
