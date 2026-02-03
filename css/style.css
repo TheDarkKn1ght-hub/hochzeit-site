@@ -517,3 +517,6 @@ input[name="response"][value="Zusage"]:checked ~ #essen-wrapper {
 .mail-button:hover {
   background-color: #b85f68;
 }
+body {
+  outline: 10px solid red !important;
+}
