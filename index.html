@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unsere Hochzeit</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="page-wrapper">
+
+  <!-- Kopfbereich -->
+  <header>
+    <h1>Kim & Marvin</h1>
+    <p class="date">Wir heiraten am <strong>16. April 2026</strong></p>
+   <h2 class="countdown-title">
+  Noch ein kleines bisschen, bis wir Ja sagen
+    </h2>
+
+<section id="countdown-section">
+  <h2 class="countdown-title">Noch ein kleines bisschen …</h2>
+
+  <div id="countdown">
+    <div class="time-box">
+      <span id="days">–</span>
+      <small>Tage</small>
+    </div>
+
+    <div class="time-box">
+      <span id="hours">–</span>
+      <small>Stunden</small>
+    </div>
+
+    <div class="time-box">
+      <span id="minutes">–</span>
+      <small>Minuten</small>
+    </div>
+  </div>
+</section>
+    
+  <!-- Hauptinhalt -->
+  <main>
+
+    <!-- Bild -->
+    <section id="hero">
+      <img src="images/Kim_Marvin.JPG" alt="Foto von Kim und Marvin">
+    </section>
+
+    <!-- Standesamt -->
+    <section id="ceremony">
+      <h2>Standesamt</h2>
+      <p>
+        Jakob Kemenate Braunschweig<br>
+        Eiermarkt 1<br>
+        38100 Braunschweig<br>
+      </p>
+
+     <iframe
+        src="https://www.google.com/maps?q=Jakob+Kemenate+Braunschweig&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </section>
+
+    <!-- Feier -->
+    <section id="party">
+      <h2>Feier</h2>
+      <p>
+        Unser Hof<br>
+        Lehmweg 1B<br>
+        38126 Braunschweig
+      </p>
+
+      <iframe
+        src="https://www.google.com/maps?q=Lehmweg+1B+Braunschweig&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </section>
+
+   <section id="schedule">
+  <h2>Tagesablauf</h2>
+
+  <div class="timeline">
+
+    <div class="event left">
+      <div class="content">
+        <span class="time">14:30 Uhr</span>
+        <h3>Standesamtliche Trauung</h3>
+        <p>Wir sagen Ja im Standesamt Braunschweig.
+        Bitte seid ca 10 Minuten eher da, Kim kommt dann als Letzte pünktlich</p>
+      </div>
+      <div class="icon">💍</div>
+    </div>
+
+    <div class="event right">
+      <div class="icon">🥂</div>
+      <div class="content">
+        <span class="time">15:15 Uhr</span>
+        <h3>Sektempfang</h3>
+        <p>Gemeinsames Anstoßen vor dem Standesamt</p>
+      </div>
+    </div>
+
+    <div class="event left">
+      <div class="icon">📷</div>
+      <div class="content">
+        <span class="time">15:30 Uhr</span>
+        <h3>Gruppenfotos</h3>
+        <p>Gruppenfotos in jeglichen Konstellationen</p>
+      </div>
+    </div>
+    
+    <div class="event right">
+      <div class="content">
+        <span class="time">18:00 Uhr</span>
+        <h3>Begrüßung</h3>
+        <p>Start auf dem Hof in Rautheim</p>
+      </div>
+      <div class="icon">👋🏻</div>
+    </div>
+    
+    <div class="event left">
+      <div class="content">
+        <span class="time">18:30 Uhr</span>
+        <h3>Eröffnung Buffet</h3>
+        <p>Wir freuen uns über Euren Beitrag zum Buffet. Bitte vegetarisch und nach Möglichkeit vegan, damit alle unsere Gäste davon mitessen können</p>
+      </div>
+      <div class="icon">🍴</div>
+    </div>
+
+    <div class="event right">
+      <div class="content">
+        <span class="time">19:30 Uhr</span>
+        <h3>Anschnitt Kuchen</h3>
+        <p>So wird die Feier nicht durch den Anschnitt des Kuchens gestört</p>
+      </div>
+      <div class="icon">🎂</div>
+    </div>
+
+    <div class="event left">
+      <div class="content">
+        <span class="time">20:00 Uhr</span>
+        <h3>Feier</h3>
+        <p>Musik und ausgelassene Stimmung</p>
+      </div>
+      <div class="icon">🎉</div>
+    </div>
+
+    
+  </div>
+</section>
+
+<section id="attendance">
+  <h2>Zu- oder Absage</h2>
+
+  <form action="https://formspree.io/f/mojjjqla" method="POST">
+
+    <label>
+      Vorname, Nachname
+      <input type="text" name="name" required>
+    </label>
+
+    <fieldset>
+  <legend>Wir kommen …</legend>
+
+  <label class="radio">
+    <input type="radio" name="response" value="Zusage" required>
+    Ja, wir kommen gerne
+  </label>
+
+  <label class="radio">
+    <input type="radio" name="response" value="Absage">
+    Leider können wir nicht kommen
+  </label>
+
+  <!-- ESSENSFELD -->
+  <label id="essen-wrapper" style="display:none;">
+    Welches Essen bringen wir mit? *
+    <input type="text" name="essen" id="essen-input">
+    <small id="duplikat-hinweis" style="display:none; color:#b00020;">
+      Hinweis: Dieses Essen wurde bereits eingetragen.
+    </small>
+  </label>
+
+</fieldset>
+    <label>
+      Weitere Personen (eine pro Zeile)
+      <textarea name="guests" rows="4"></textarea>
+    </label>
+
+    <label>
+      Nachricht an uns
+      <textarea name="message" rows="4"></textarea>
+    </label>
+
+    <button type="submit">Antwort senden</button>
+  </form>
+</section>
+    <section id="witnesses">
+  <h2>Unsere Trauzeugen</h2>
+    <div class="witness-grid">
+      <div class="witness">
+        <img src="images/Alex.JPG" alt="Trauzeuge">
+        <h3>Alex</h3>
+        <p>Trauzeuge</p>
+      </div>
+
+      <div class="witness">
+        <img src="images/Henni.JPG" alt="Trauzeugin">
+        <h3>Henni</h3>
+        <p>Trauzeugin</p>
+      </div>
+    </div>
+      
+    <div class="witness-contact">
+      <a
+        class="mail-button"
+        href="mailto:alexander_ennen&#64;gmx&#46;de,henrike.philipp&#64;web&#46;de
+        ?subject=Hochzeit%20Kim%20%26%20Marvin">
+        ✉️ Trauzeugen kontaktieren
+      </a>
+    </div>
+</section>
+
+<section id="essensliste">
+  <h2>Was wird mitgebracht?</h2>
+
+  <ul id="essen-liste">
+    <li>Lade Liste …</li>
+  </ul>
+</section>
+    <!-- GANZ AM ENDE der Datei -->
+<script>
+const sheetURL =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQCf97RcKu_czfAPWDSzkprQRgcVo9-yaNb0ySxg2XTAgQPt8mj_CZFrpHzWfuzJhCZ1Kfeyuc2VCem/pub?gid=0&single=true&output=csv";
+
+fetch(sheetURL)
+  .then(res => res.text())
+  .then(text => {
+    const items = text
+      .split("\n")
+      .slice(1)
+      .map(e => e.trim())
+      .filter(e => e.length)
+      .sort((a, b) => a.localeCompare(b, "de"));
+
+    const liste = document.getElementById("essen-liste");
+    liste.innerHTML = "";
+
+    if (items.length === 0) {
+      liste.innerHTML = "<li>Noch keine Einträge</li>";
+      return;
+    }
+
+    items.forEach(e => {
+      const li = document.createElement("li");
+      li.textContent = e;
+      liste.appendChild(li);
+    });
+  })
+  .catch(() => {
+    document.getElementById("essen-liste").innerHTML =
+      "<li>Liste konnte nicht geladen werden</li>";
+  });
+</script>
+</body>
+    
+<section id="faq">
+  <h2>Häufige Fragen</h2>
+
+  <details>
+    <summary>Was sollen wir anziehen?</summary>
+    <p>Schick in bunten Farben, festliche Outfits, gern farbig und fröhlich.</p>
+  </details>
+
+  <details>
+    <summary>Gibt es Parkmöglichkeiten?</summary>
+    <p>In der Straße "Zum Ackerberg".</p>
+  </details>
+
+  <details>
+    <summary>Bis wann sollen wir antworten?</summary>
+    <p>Bitte gebt uns bis spätestens 15. Februar 2026 Bescheid.</p>
+  </details>
+
+  <details>
+    <summary>Was könnt ihr uns schenken?</summary>
+    <p>Eure Anwesenheit ist für uns das größte Geschenk. Wenn ihr uns trotzdem was schenken wollt, 
+      freuen wir uns über einen Zuschuss zur Reisekasse.</p>
+  </details>
+</section>
+    
+  </main>
+
+  <!-- Fußbereich -->
+  <footer>
+    <p>Wir freuen uns, diesen besonderen Tag mit euch zu feiern.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js" defer></script>
+
+    <script>
+  console.log("DEBUG: Script läuft");
+
+  const cd = document.getElementById("countdown");
+  if (cd) {
+    cd.style.display = "flex";
+    cd.style.visibility = "visible";
+    cd.style.opacity = "1";
+    cd.style.height = "auto";
+    console.log("DEBUG: Countdown erzwungen sichtbar");
+  } else {
+    console.error("DEBUG: countdown-Element nicht im DOM");
+  }
+</script>
+    
+</body>
+</html>
