@@ -583,40 +583,45 @@ input[name="response"][value="Zusage"]:checked ~ #essen-wrapper {
 /* ==============================
    MOBILE TIMELINE CLEAN
 ============================== */
+/* ==============================
+   MOBILE TIMELINE – FIXED ORDER
+============================== */
 @media (max-width: 600px) {
 
   .timeline::before {
-    display: none; /* Linie komplett aus */
+    display: none;
   }
 
   .event {
-    position: relative;
-    display: block;
-    padding: 0;
-    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 2.2rem;
   }
 
   .event .icon {
+    order: 1;
     position: static;
-    transform: none;
-    margin-bottom: 0.6rem;
     width: 42px;
     height: 42px;
     font-size: 1.3rem;
+    margin: 0;
   }
 
   .event .content {
+    order: 2;
     width: 100%;
-    align-items: flex-start;
     text-align: left;
     padding: 0;
   }
 
-  .event.left .content,
-  .event.right .content {
-    margin: 0;
+  .event.left,
+  .event.right {
+    justify-content: flex-start;
   }
 }
+
 @media (max-width: 600px) {
 
   #countdown {
