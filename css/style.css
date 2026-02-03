@@ -517,3 +517,46 @@ input[name="response"][value="Zusage"]:checked ~ #essen-wrapper {
 .mail-button:hover {
   background-color: #b85f68;
 }
+
+/* ==============================
+   MOBILE TIMELINE (HOCHKANT)
+============================== */
+@media (max-width: 600px) {
+
+  /* Linie nach links */
+  .timeline::before {
+    left: 24px;
+  }
+
+  .event {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 60px;
+    margin-bottom: 2.5rem;
+  }
+
+  .event.left,
+  .event.right {
+    justify-content: flex-start;
+  }
+
+  /* Icon links fixieren */
+  .event .icon {
+    position: absolute;
+    left: 24px;
+    top: 0;
+    transform: translateX(-50%);
+  }
+
+  /* Inhalt volle Breite */
+  .event .content {
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0;
+  }
+
+  .event .time {
+    margin-top: 0.2rem;
+  }
+}
