@@ -184,7 +184,23 @@
       Hinweis: Dieses Essen wurde bereits eingetragen.
     </small>
   </label>
+</fieldset>
+    <fieldset id="fruehstueck-wrapper" style="display:none;">
+  <legend>Gemeinsames Frühstück am nächsten Morgen</legend>
 
+  <label class="checkbox">
+    <input type="checkbox" id="fruehstueck-check">
+    Wir kommen gerne zum gemeinsamen Frühstück
+  </label>
+
+  <label id="fruehstueck-anzahl-wrapper" style="display:none;">
+    Anzahl Personen beim Frühstück
+    <input type="number"
+           name="fruehstueck_anzahl"
+           min="1"
+           max="10"
+           placeholder="z. B. 2">
+  </label>
 </fieldset>
     <label>
       Weitere Personen (eine pro Zeile)
