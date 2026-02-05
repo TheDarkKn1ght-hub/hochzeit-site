@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const hoursEl = document.getElementById("hours");
   const minutesEl = document.getElementById("minutes");
 
-  const weddingDate = new Date("2026-04-16T14:30:00+02:00"); // Setze dein echtes Datum
+  const weddingDate = new Date("2026-04-16T14:30:00+02:00");
 
   function updateCountdown() {
     const diff = weddingDate - new Date();
@@ -22,19 +22,21 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
-  /********* ESSEN-FELD & DUPLIKAT *********/
+  /********* ZUSAGE / ABSAGE *********/
   const radios = document.querySelectorAll('input[name="response"]');
+
+  /********* ESSEN *********/
   const essenWrapper = document.getElementById("essen-wrapper");
   const essenInput = document.getElementById("essen-input");
   const hinweis = document.getElementById("duplikat-hinweis");
 
-  // Essensfeld nur bei Zusage anzeigen
   radios.forEach(radio => {
     radio.addEventListener("change", () => {
       if (radio.checked && radio.value === "Zusage") {
         essenWrapper.style.display = "block";
         essenInput.required = true;
-      } else if (radio.checked && radio.value === "Absage") {
+      }
+      if (radio.checked && radio.value === "Absage") {
         essenWrapper.style.display = "none";
         essenInput.required = false;
         essenInput.value = "";
@@ -43,8 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // CSV-Duplikatwarnung
-  const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQCf97RcKu_czfAPWDSzkprQRgcVo9-yaNb0ySxg2XTAgQPt8mj_CZFrpHzWfuzJhCZ1Kfeyuc2VCem/pub?gid=0&single=true&output=csv";
+  const sheetURL =
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQCf97RcKu_czfAPWDSzkprQRgcVo9-yaNb0ySxg2XTAgQPt8mj_CZFrpHzWfuzJhCZ1Kfeyuc2VCem/pub?gid=0&single=true&output=csv";
+
   let bekannteEssen = [];
 
   fetch(sheetURL)
@@ -62,9 +65,33 @@ document.addEventListener("DOMContentLoaded", () => {
     hinweis.style.display = bekannteEssen.includes(wert) ? "block" : "none";
   });
 
-  /********* ESSEN-LISTE ANZEIGEN *********/
+  /********* FRÜHSTÜCK *********/
+  const fruehstueckWrapper = document.getElementById("fruehstueck-wrapper");
+  const fruehstueckCheck = document.getElementById("fruehstueck-check");
+  const fruehstueckAnzahlWrapper =
+    document.getElementById("fruehstueck-anzahl-wrapper");
+
+  radios.forEach(radio => {
+    radio.addEventListener("change", () => {
+      if (radio.checked && radio.value === "Zusage") {
+        fruehstueckWrapper.style.display = "block";
+      }
+      if (radio.checked && radio.value === "Absage") {
+        fruehstueckWrapper.style.display = "none";
+        fruehstueckCheck.checked = false;
+        fruehstueckAnzahlWrapper.style.display = "none";
+      }
+    });
+  });
+
+  fruehstueckCheck.addEventListener("change", () => {
+    fruehstueckAnzahlWrapper.style.display =
+      fruehstueckCheck.checked ? "block" : "none";
+  });
+
+  /********* ESSEN-LISTE *********/
   const liste = document.getElementById("essen-liste");
-  if(liste){
+  if (liste) {
     fetch(sheetURL)
       .then(res => res.text())
       .then(text => {
@@ -73,31 +100,25 @@ document.addEventListener("DOMContentLoaded", () => {
           .slice(1)
           .map(e => e.trim())
           .filter(e => e.length)
-          .sort((a,b)=>a.localeCompare(b,"de"));
+          .sort((a, b) => a.localeCompare(b, "de"));
 
         liste.innerHTML = "";
-        if(items.length === 0){
-          liste.innerHTML = "<li>Noch keine Einträge</li>";
-        } else {
-          items.forEach(e => {
-            const li = document.createElement("li");
-            li.textContent = e;
-            liste.appendChild(li);
-          });
-        }
+        items.forEach(e => {
+          const li = document.createElement("li");
+          li.textContent = e;
+          liste.appendChild(li);
+        });
       });
   }
-  document.addEventListener("DOMContentLoaded", () => {
+
+  /********* MAIL-BUTTONS *********/
   document.querySelectorAll(".witness-mail").forEach(button => {
     button.addEventListener("click", () => {
       const user = button.dataset.user;
       const domain = button.dataset.domain;
       const subject = encodeURIComponent(button.dataset.subject || "");
-
-      window.location.href =
-        `mailto:${user}@${domain}?subject=${subject}`;
+      window.location.href = `mailto:${user}@${domain}?subject=${subject}`;
     });
   });
-});
 
 });
