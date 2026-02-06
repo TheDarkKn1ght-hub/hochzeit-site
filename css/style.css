@@ -625,6 +625,27 @@ input[name="response"][value="Zusage"]:checked ~ #essen-wrapper {
   }
 }
 /* ==============================
+   TAGESABLAUF – DESKTOP: TITEL & ZEIT MITTIG
+============================== */
+@media (min-width: 601px) {
+
+  /* Uhrzeit + Titel mittig */
+  .event .time,
+  .event h3 {
+    text-align: center;
+    align-self: center;
+  }
+
+  /* Beschreibung wieder seitlich ausgerichtet */
+  .event.left p {
+    text-align: right;
+  }
+
+  .event.right p {
+    text-align: left;
+  }
+}
+/* ==============================
    TAGESABLAUF – MOBILE ZENTRIERT
 ============================== */
 @media (max-width: 600px) {
