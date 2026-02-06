@@ -583,6 +583,48 @@ input[name="response"][value="Zusage"]:checked ~ #essen-wrapper {
   }
 }
 /* ==============================
+   TAGESABLAUF – DESKTOP RESET
+============================== */
+@media (min-width: 601px) {
+
+  .event {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+  }
+
+  .event.left {
+    justify-content: flex-end;
+  }
+
+  .event.right {
+    justify-content: flex-start;
+  }
+
+  .event.left .content {
+    margin-right: 60px;
+    text-align: right;
+    align-items: flex-end;
+  }
+
+  .event.right .content {
+    margin-left: 60px;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .timeline::before {
+    display: block;
+    left: 50%;
+  }
+
+  .event .icon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+/* ==============================
    TAGESABLAUF – MOBILE ZENTRIERT
 ============================== */
 @media (max-width: 600px) {
