@@ -623,22 +623,23 @@ input[name="response"][value="Zusage"]:checked ~ #essen-wrapper {
     left: 50%;
     transform: translateX(-50%);
   }
-}
-/* ==============================
-   TAGESABLAUF – DESKTOP: ALLES IM CONTENT ZENTRIERT
+}/* ==============================
+   TAGESABLAUF – DESKTOP FINAL FIX
 ============================== */
 @media (min-width: 601px) {
 
-  /* kompletter Content zentriert */
-  .event .content {
+  /* Container darf links/rechts stehen bleiben */
+  .event.left .content,
+  .event.right .content {
     align-items: center;
-    text-align: center;
   }
 
+  /* ALLE Texte explizit mittig */
   .event .time,
   .event h3,
   .event p {
     text-align: center;
+    align-self: center;
   }
 }
 /* ==============================
